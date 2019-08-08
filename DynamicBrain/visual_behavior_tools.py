@@ -1,6 +1,10 @@
 import numpy as np
 import pandas as pd
 
+def get_dff_matrix(session):
+    dff = np.stack(session.dff_traces.dff ,axis=0)
+    return dff    
+
 def get_mean_df(response_df, analysis=None, conditions=['cell_specimen_id', 'image_name'], flashes=False, omitted=False, get_reliability=False):
     '''
         Computes an analysis on a selection of responses (either flashes or trials). Computes mean_response, sem_response, the pref_stim, fraction_active_responses. 
@@ -25,7 +29,8 @@ def get_mean_df(response_df, analysis=None, conditions=['cell_specimen_id', 'ima
         # mdf = annotate_mean_df_with_time_to_peak(analysis, mdf, window=window)
         # mdf = annotate_mean_df_with_fano_factor(analysis, mdf)
 
-    if 'p_value' in mdf.keys(): 
+    if 'p_value' in mdf.keys():
+        # This is a p_value for the mean response? 
         fraction_significant_responses = rdf.groupby(conditions).apply(get_fraction_significant_responses)
         fraction_significant_responses = fraction_significant_responses.reset_index()
         mdf['fraction_significant_responses'] = fraction_significant_responses.fraction_significant_responses
@@ -73,6 +78,7 @@ def get_mean_sem_trace(group):
 def annotate_mean_df_with_pref_stim(mean_df):
     '''
         Calculates the preferred stimulus based on the mean_response index.
+        Inputs: mean_df is a dataframe of the mean responses. 
     '''
     if 'image_name' in mean_df.keys():
         image_name = 'image_name'
