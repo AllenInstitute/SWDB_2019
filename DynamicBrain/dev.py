@@ -1,4 +1,5 @@
 import os
+os.chdir('SWDB/SWDB_2019/DynamicBrain/')
 import visual_behavior_tools as t
 
 from allensdk.brain_observatory.behavior.swdb import behavior_project_cache as bpc
@@ -13,6 +14,9 @@ experiment_id = 792812544
 session = cache.get_session(experiment_id)
 tr = session.trial_response_df
 
+
+
+flash_response_df = pd.read_hdf('/allen/programs/braintv/workgroups/nc-ophys/nick.ponvert/data/test_flash_response_df.h5', key='df')
 
 
 

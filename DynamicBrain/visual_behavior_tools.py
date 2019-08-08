@@ -8,15 +8,20 @@ def get_dff_matrix(session):
 def get_mean_df(response_df, analysis=None, conditions=['cell_specimen_id', 'image_name'], flashes=False, omitted=False, get_reliability=False):
     '''
         Computes an analysis on a selection of responses (either flashes or trials). Computes mean_response, sem_response, the pref_stim, fraction_active_responses. 
-        
+       
+        INPUTS
+        response_df, the dataframe to group
+        conditions, the conditions to group by, the first entry should be 'cell_specimen_id', the second could be 'image_name' or 'change_image_name'
+        flashes, if True, computes the fraction of individual images that were significant
+        analysis, not supported
+        omitted, not supported
+        get_reliability, not supported 
         Returns a dataframe, does not alter the response_df
     '''
-    # window = get_window(analysis, flashes, omitted)
-
+    
     rdf = response_df.copy()
     mdf = rdf.groupby(conditions).apply(get_mean_sem_trace)
-    #mdf = mdf[['mean_response', 'sem_response', 'mean_trace', 'sem_trace', 'mean_responses']]
-    mdf = mdf[['mean_response', 'sem_response', 'mean_responses']]
+    mdf = mdf[['mean_response', 'sem_response', 'mean_trace', 'sem_trace', 'mean_responses']]
     mdf = mdf.reset_index()
 
     if ('image_name' in conditions) or ('change_image_name' in conditions):
@@ -24,27 +29,28 @@ def get_mean_df(response_df, analysis=None, conditions=['cell_specimen_id', 'ima
 
     if analysis is not None:
         raise Exception('Not Implemented yet')
+        # window = get_window(analysis, flashes, omitted)
         # mdf = annotate_mean_df_with_p_value(analysis, mdf, window)
         # mdf = annotate_mean_df_with_sd_over_baseline(analysis, mdf, window=window)
         # mdf = annotate_mean_df_with_time_to_peak(analysis, mdf, window=window)
         # mdf = annotate_mean_df_with_fano_factor(analysis, mdf)
 
-    if 'p_value' in mdf.keys():
-        # This is a p_value for the mean response? 
+    # What fraction of individual responses were significant?
+    if flashes:
         fraction_significant_responses = rdf.groupby(conditions).apply(get_fraction_significant_responses)
         fraction_significant_responses = fraction_significant_responses.reset_index()
         mdf['fraction_significant_responses'] = fraction_significant_responses.fraction_significant_responses
 
-    if flashes:
-        raise Exception('Not Implemented yet')
-        # These functions need p_value_baseline, and p_value_omitted, which we dont have yet
-        # fraction_responsive_responses = rdf.groupby(conditions).apply(get_fraction_responsive_responses, omitted)
-        # fraction_responsive_responses = fraction_responsive_responses.reset_index()
-        # mdf['fraction_responsive_responses'] = fraction_responsive_responses.fraction_responsive_responses
+    #if flashes:
+    #    # raise Exception('Not Implemented yet')
+    #    # These functions need p_value_baseline, and p_value_omitted, which we dont have yet
+    #    # fraction_responsive_responses = rdf.groupby(conditions).apply(get_fraction_responsive_responses, omitted)
+    #    # fraction_responsive_responses = fraction_responsive_responses.reset_index()
+    #    # mdf['fraction_responsive_responses'] = fraction_responsive_responses.fraction_responsive_responses
 
-    fraction_active_responses = rdf.groupby(conditions).apply(get_fraction_active_responses)
-    fraction_active_responses = fraction_active_responses.reset_index()
-    mdf['fraction_active_responses'] = fraction_active_responses.fraction_active_responses
+    #fraction_active_responses = rdf.groupby(conditions).apply(get_fraction_active_responses)
+    #fraction_active_responses = fraction_active_responses.reset_index()
+    #mdf['fraction_active_responses'] = fraction_active_responses.fraction_active_responses
 
     # Not implemented because we don't have n_events calculated
     #    fraction_nonzero_trials = rdf.groupby(conditions).apply(get_fraction_nonzero_trials)
@@ -67,10 +73,10 @@ def get_mean_sem_trace(group):
     mean_response = np.mean(group['mean_response'])
     mean_responses = group['mean_response'].values
     sem_response = np.std(group['mean_response'].values) / np.sqrt(len(group['mean_response'].values))
-    #mean_trace = np.mean(group['dff_trace'])
-    #sem_trace = np.std(group['dff_trace'].values) / np.sqrt(len(group['dff_trace'].values))
+    mean_trace = np.mean(group['dff_trace'])
+    sem_trace = np.std(group['dff_trace'].values) / np.sqrt(len(group['dff_trace'].values))
     return pd.Series({'mean_response': mean_response, 'sem_response': sem_response,
-    #                  'mean_trace': mean_trace, 'sem_trace': sem_trace,
+                      'mean_trace': mean_trace, 'sem_trace': sem_trace,
                       'mean_responses': mean_responses})
 
 
