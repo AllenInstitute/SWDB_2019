@@ -1,19 +1,9 @@
-import allensdk.brain_observatory.behavior.swdb.utilities as tools
-from allensdk.brain_observatory.behavior.swdb import behavior_project_cache as bpc
-cache_json = {'manifest_path': '/allen/programs/braintv/workgroups/nc-ophys/visual_behavior/SWDB_2019/visual_behavior_data_manifest.csv',
-              'nwb_base_dir': '/allen/programs/braintv/workgroups/nc-ophys/visual_behavior/SWDB_2019/nwb_files',
-              'analysis_files_base_dir': '/allen/programs/braintv/workgroups/nc-ophys/visual_behavior/SWDB_2019/extra_files_final'
-              }
-cache = bpc.BehaviorProjectCache(cache_json)
-experiment_id = 792812544
-session = cache.get_session(experiment_id)
-tr = session.trial_response_df
-fr = session.flash_response_df
-
 import numpy as np
 import pandas as pd
 from scipy import stats
 
+# Just need to add these lines somewhere
+# These functions copy trial_response_df, and then modify it. 
 trial_response_df = add_p_vals_tr(trial_response_df)
 trial_response_df = annotate_trial_response_df_with_pref_stim(trial_response_df)
 
