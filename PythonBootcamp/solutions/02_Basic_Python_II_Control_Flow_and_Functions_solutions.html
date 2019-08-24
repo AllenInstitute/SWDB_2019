@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>02_test</title>
+<title>02_Basic_Python_II_Control_Flow_and_Functions_solutions</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13193,14 +13154,14 @@ All done.
 <p>The code above does the following:
 
 <ol>
-<li> <code>range(6)</code> creates a list of 6 consecutive integers starting at 0.
+    <li> <code>range(6)</code> creates a <code>range</code> type of 6 consecutive integers starting at 0.
 <li> For each integer in the list, assign the integer to the variable <code>i</code> and then execute the code inside the <code>for</code> loop. This means that the statement <code>print(i)</code> is executed 6 times, each time with a different value assigned to <code>i</code>.
 <li> Print "All done.'
 </ol>
 
 <p>If you're coming from almost any other programming language, the above code may look strange to you--how does Python know that <code>print(i)</code> is meant to be executed 6 times, whereas <code>print "All done."</code> should only be executed once? Most languages would require you to explicitly mark the end of <code>for</code> loop (for example, by writing <code>END</code>, <code>ENDFOR</code>, or a closing brace <code>}</code>). 
 
-<p>The answer is that Python uses *indentation* to determine the beginning and end of code blocks. Every line with the same initial indentation is considered a part of the same code block. A different indentation level indicates another code block. This makes many newcomers uncomfortable at first! Never fear; we love this feature for its simplicity and cleanliness, and our text editors take care of the tedious work for us.
+<p>The answer is that Python uses <b>indentation</b> to determine the beginning and end of code blocks. Every line with the same initial indentation is considered a part of the same code block. A different indentation level indicates another code block. This makes many newcomers uncomfortable at first! Never fear; we love this feature for its simplicity and cleanliness, and our text editors take care of the tedious work for us.
 
 <p>Let's see what would have happened if the <code>print(i)</code> statement were not correctly indented:
 </div>
@@ -13249,7 +13210,7 @@ All done.
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
 <p>The code in the previous cell gives an <code>IndentationError</code>, which tells us that we need to fix the indentation of the line that says <code>print(i)</code>.
 
-<p>How much should you indent?  By convention, most Python code indents using 4 spaces.  This is good practice.  Technically, you can choose as much white space you would like as long as it is *consistent*, but please do not use tabs!  This can confuse other people trying to use your code on a different platform or with a different editor.  Most Python environments will by default or can be configured to convert the use of the tab key to 4 spaces.  Many will also auto-indent what should be a new code block.
+<p>How much should you indent?  By convention, most Python code indents using 4 spaces.  This is good practice.  Technically, you can choose as much white space you would like as long as it is <b>consistent</b>, but please do not use tabs!  This can confuse other people trying to use your code on a different platform or with a different editor.  Most Python environments will by default or can be configured to convert the use of the tab key to 4 spaces.  Many will also auto-indent what should be a new code block.
 
 <p>We will see many more examples of code indentation below.
 </div>
@@ -13512,8 +13473,8 @@ Add two equal length lists of numbers element-wise.
 <p>Note the use of the double-equal sign to indicate a test for equality. Remember: 
 
 <ul>
-<li> A single-equal <code>=</code> is an *assignment*; this changes the value of a variable.
-<li> A double-equal <code>==</code> is a *question*; it returns True if the objects on either side are equal.
+    <li> A single-equal <code>=</code> is an <b>assignment</b>; this changes the value of a variable.
+    <li> A double-equal <code>==</code> is a <b>question</b>; it returns True if the objects on either side are equal.
 </ul>
 
 </div>
@@ -13528,9 +13489,7 @@ Add two equal length lists of numbers element-wise.
 <p>Repeat the above code block with the if statement changed to
 
 
-```python
-if x=5:
-```
+<code>if x=5:</code>
 
 <p>What do you get?
 </div>
@@ -13792,7 +13751,7 @@ One can also add <code>elif</code> and <code>else</code> blocks to an <code>if</
 <p><code>for</code> loops also support <code>break</code> and <code>continue</code> statements. These follow the standard behavior used in many other languages:
 
 <ul>
-<li> <code>break</code> causes the currently-running loop to exit immediately--execution jumps to the first line *after* the end of the for-loop's block.
+<li> <code>break</code> causes the currently-running loop to exit immediately--execution jumps to the first line <b>after</b> the end of the for-loop's block.
 <li> <code>continue</code> causes the current iteration of the for-loop to end--execution jumps back to the beginning of the for-loop's block, and the next iteration begins.
 </ul>
 </div>
@@ -13988,9 +13947,9 @@ you?
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
 <p>Is there a better way?
 
-<p>When we originally used <code>for i in range(6)</code>, we said that <code>range(6)</code> just generates a list of integers, and that the for-loop simply executes its code block once for each item in the list. 
+<p>When we originally used <code>for i in range(6)</code>, we said that <code>range(6)</code> just generates a sequence of integers, and that the for-loop simply executes its code block once for each item in the sequence. 
 
-<p>In this case, we already *have* the list of items we want to iterate over in <code>words_from_hello</code>, so there is no need to introduce a second list of integers:
+<p>In this case, we already <b>have</b> the list of items we want to iterate over in <code>words_from_hello</code>, so there is no need to introduce a second sequence of integers:
 </div>
 </div>
 </div>
@@ -14199,9 +14158,9 @@ banana yellow
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-<p>The last example is a nice combination of *multiple assignment* and iterators.  The <code>items()</code> method generates a tuple for each loop iteration that contains the <code>(key, value)</code> pair, which is then split and assigned to the <code>key</code> and <code>value</code> variables in the for-loop.
+    <p>The last example is a nice combination of <b>multiple assignment</b> and iterators.  The <code>items()</code> method generates a tuple for each loop iteration that contains the <code>(key, value)</code> pair, which is then split and assigned to the <code>key</code> and <code>value</code> variables in the for-loop.
 
-<p>It is quite common that we will want to iterate over a list of items *and* at the same time have access to the index (position) of each item within the list. This can be done simply using the tools shown above, but Python also provides a convenient function called <code>enumerate()</code> that makes this easier:
+<p>It is quite common that we will want to iterate over a list of items <b>and</b> at the same time have access to the index (position) of each item within the list. This can be done simply using the tools shown above, but Python also provides a convenient function called <code>enumerate()</code> that makes this easier:
 </div>
 </div>
 </div>
@@ -14459,7 +14418,7 @@ Create a dictionary with the following keys and values by iterating with a <code
 
 <p>Code execution is often very repetitive; we have seen this above with for-loops. What happens when you need the same block of code to be executed from two different parts of your program? Beginning programmers are often tempted to copy-and-paste snippets of code, a practice that is highly discouraged. In the vast majority of cases, code duplication results in programs that are difficult to read, maintain, and debug.
 
-<p>To avoid code duplication, we define blocks of re-usable code called <b>functions</b>. These are one of the most ubiquitous and powerful features across all programming languages. We have already seen a few of Python's built-in functions above--<code>range()</code>, <code>len()</code>, <code>enumerate()</code>, etc. In this section we will see how to define new functions for our own use.
+<p>To avoid code duplication, we define blocks of re-usable code called <b>functions</b>. These are one of the most ubiquitous and powerful features across all programming languages. We have already seen a few of Python's built-in functions above--<code>len()</code>, <code>enumerate()</code>, etc. In this section we will see how to define new functions for our own use.
 
 <p>In Python, we define new functions by using the following syntax:
 </div>
@@ -14613,7 +14572,7 @@ my_new_coordinates(x, y)
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-A function's arguments can be given a default value by using <code>argname=value</code> in the declared list of arguments.  These are called "keyword arguments", and they must appear *after* all other arguments.  When we call the function, argument values can be specified many different ways, as we will see below:
+A function's arguments can be given a default value by using <code>argname=value</code> in the declared list of arguments.  These are called "keyword arguments", and they must appear <b>after</b> all other arguments.  When we call the function, argument values can be specified many different ways, as we will see below:
 </div>
 </div>
 </div>
@@ -14973,7 +14932,7 @@ goodbye
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-In this case, we *are* able to access the variable <code>message</code> from within the function, because the variable is defined in the global scope. However, this practice is generally discouraged because it can make your code more difficult to maintain and debug.
+    In this case, we <b>are</b> able to access the variable <code>message</code> from within the function, because the variable is defined in the global scope. However, this practice is generally discouraged because it can make your code more difficult to maintain and debug.
 </div>
 </div>
 </div>
@@ -14986,9 +14945,8 @@ In this case, we *are* able to access the variable <code>message</code> from wit
 <p><b>Exercise 2.8:</b> Write a function to 'flatten' a nested list.  Can you do this with a list comprehension?  (Caution:  The answer for a list comprehension is very simple but can be quite tricky to work out.)
 
 
-```
-    [['a','b'],['c','d']] -> ['a','b','c','d']
-```
+
+<code>[['a','b'],['c','d']] -> ['a','b','c','d']</code>
 </div>
 </div>
 </div>
@@ -15039,7 +14997,6 @@ In this case, we *are* able to access the variable <code>message</code> from wit
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background: #DFF0D8; border-radius: 3px; padding: 10px;">
 <p><b>Exercise 2.9:</b> Consider the function in the following code block.  Does this function work as expected?  What happens to the list passed in as <code>my_list</code> when you run it?  Experiment with a list of numbers.
-
 
 ```python
 def square_ith(i,my_list):
