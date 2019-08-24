@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13176,7 +13137,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-<p>In Python, a single piece of data is called an *object*, and each object has a specific *type* (types are also called "classes"). These include simple types like integers, floats, and strings, and more complex types like lists, arrays, and dictionaries.
+    <p>In Python, a single piece of data is called an <b>object</b>, and each object has a specific <b>type</b> (types are also called "classes"). These include simple types like integers, floats, and strings, and more complex types like lists, arrays, and dictionaries.
 
 <p>In the example above, we created an object with the value "hello, world". If we want to know what type this object has, we can ask the Python interpreter:
 </div>
@@ -13266,7 +13227,7 @@ Hello, world 2
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-<p>It is important to know the *types* of your objects, because this will tell you what you can *do* with each object.
+    <p>It is important to know the <b>types</b> of your objects, because this will tell you what you can <b>do</b> with each object.
 
 <p>In "object-oriented" programming, both data and the functions that operate on that data are encapsulated together in an object. That is, each object gives us access to both its data (an integer, a string, etc.) and a set of functions (called "methods") that we can use to manipulate the data:
 </div>
@@ -13317,7 +13278,7 @@ Capitalize the letters in a string.
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;'hello' -> 'HELLO'
 
-<p>[See: string methods documentation](https://docs.python.org/2/library/stdtypes.html#string-methods)
+<p>See: <a href="https://docs.python.org/2/library/stdtypes.html#string-methods">string methods documentation</a>
 </div>
 </div>
 </div>
@@ -13500,7 +13461,7 @@ Hello, world
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
 <h2>A word about names</h2>
 
-<p>Python uses a different model than you may be familiar with for assigning names.  The assignment operator (<code>=</code>) in Python creates a *reference* to an object in memory.  It does *not* create a new variable with the new name.  You can test this with the builtin function <code>id</code>, which returns a unique identifier for every object.
+<p>Python uses a different model than you may be familiar with for assigning names.  The assignment operator (<code>=</code>) in Python creates a <b>reference</b> to an object in memory.  It does <b>not</b> create a new variable with the new name.  You can test this with the builtin function <code>id</code>, which returns a unique identifier for every object.
 
 <p>Now let's play with some of the numerical data types:
 </div>
@@ -13562,7 +13523,8 @@ Hello, world
 <span class="n">c</span> <span class="o">=</span> <span class="mf">8.5</span><span class="o">**</span><span class="mi">3</span>          <span class="c1"># exponent</span>
 <span class="n">d</span> <span class="o">=</span> <span class="mi">173</span> <span class="o">%</span> <span class="mi">12</span>        <span class="c1"># modulo</span>
 <span class="n">e</span> <span class="o">=</span> <span class="mf">1e2</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>   <span class="c1"># scientific notation, parentheses</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">5</span><span class="o">//</span><span class="mi">2</span>            <span class="c1"># integer division</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13579,7 +13541,7 @@ Hello, world
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4 20.0 614.125 5 61812.5
+<pre>4 20.0 614.125 5 61812.5 2
 </pre>
 </div>
 </div>
@@ -13681,7 +13643,7 @@ Hello, world
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background: #DFF0D8; border-radius: 3px; padding: 10px;">
-    <p><b>Exercise 1.3:</b>  Add two string representations of an integer.
+    <p><b>Exercise 1.2:</b>  Add two string representations of an integer.
 
 <p>   &nbsp;&nbsp;&nbsp;         '345', '20' ->  '365' 
 
@@ -13731,18 +13693,26 @@ this is correct:
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background: #DFF0D8; border-radius: 3px; padding: 10px;">
+    <p><b>Exercise 1.3:</b>  Many countries use a comma instead of period to indicate a decimal point. However, Python does not support this notation. Modify the following string and convert it to a float object using tools learned above.
+
+<p>   <code>strval = "124,78"</code> 
+
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Exercise: Many countries use a comma instead of period to indicate a </span>
-<span class="c1"># decimal point. However, Python does not</span>
-<span class="c1"># support this notation. Modify the following string and </span>
-<span class="c1"># convert it to a float object using tools learned above.</span>
-<span class="n">strval</span> <span class="o">=</span> <span class="s2">&quot;124,78&quot;</span>
-<span class="n">floatval</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">strval</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>                    <span class="c1"># replace the blank with your answer</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">floatval</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">floatval</span><span class="p">))</span>   <span class="c1"># this should print   (124.78, &lt;type &#39;float&#39;&gt;)  if done correctly.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strval</span> <span class="o">=</span> <span class="s2">&quot;124,78&quot;</span>
+<span class="n">floatval</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">strval</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>                   
+<span class="nb">print</span><span class="p">(</span><span class="n">floatval</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">floatval</span><span class="p">))</span>   
 </pre></div>
 
     </div>
@@ -13861,12 +13831,12 @@ this is correct:
 <p>What is a list?  A list is a collection of objects that is:
 
 <ol>
-<li>*ordered* - the objects are arranged in a certain order.
-<li>*addressable* - we can request each object by its address (its position in the list).
-<li>*mutable* - the list can be changed after it is created.
+<li><b>ordered</b> - the objects are arranged in a certain order.
+<li><b>addressable</b> - we can request each object by its address (its position in the list).
+<li><b>mutable</b> - the list can be changed after it is created.
 </ol>
 
-<p>Note that lists may contain *any* type of Python object, and the objects in a list need not be of the same type.
+<p>Note that lists may contain <b>any</b> type of Python object, and the objects in a list need not be of the same type.
 </div>
 </div>
 </div>
@@ -14004,7 +13974,9 @@ world
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-<p>It's important enough to say again:
+<p>Assignment creates new names, not new objects!
+
+<p>Also, It's important enough to say again:
 
 <p><strong>Python indexes from 0!</strong>
 </div>
@@ -14198,7 +14170,7 @@ world
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-<p>So we have learned that all data in Python is represented as *objects*, that each object is of a specific *type*, and that each type has specific *methods* associated with it (strings have <code>lower()</code> and <code>replace()</code>, lists have <code>append()</code> and <code>remove()</code>, etc).
+<p>So we have learned that all data in Python is represented as <b>objects</b>, that each object is of a specific <b>type</b>, and that each type has specific <b>methods</b> associated with it (strings have <code>lower()</code> and <code>replace()</code>, lists have <code>append()</code> and <code>remove()</code>, etc).
 
 <p>Given an object of a particular type, how can we determine the list of all methods available for that object? We have a few options:
 
@@ -14379,7 +14351,7 @@ class list(object)
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
     <p>In the help documentation above, we see many methods that begin with an underscore <code>_</code>. These methods are considered private to the object; ignore these for now. The remaining methods are meant to be public (we are encouraged to use them).
 
-<p>Another very useful feature of Python is that is allows *introspection*--we can ask the Python interpreter questions like "what variables are available from here", "what type is this object", and "what methods are available through this object".
+<p>Another very useful feature of Python is that is allows <b>introspection</b>--we can ask the Python interpreter questions like "what variables are available from here", "what type is this object", and "what methods are available through this object".
 </div>
 </div>
 </div>
@@ -14503,7 +14475,9 @@ class list(object)
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-    <p><code>range()</code> is a convenient function to create lists of <code>int</code>s.  Notice that the entries here run from 0 to 9 when we ask for a list of length 10.
+    <p>Python has a type called <code>range</code> that describes sequences of <code>int</code>s.  We can create <code>range</code>s by calling the builtin function also called <code>range</code>.  Casting these to a <code>list</code> is an easy way to create lists of integers.  
+
+ Notice that the entries here run from 0 to 9 when we ask for a list of length 10.
 </div>
 </div>
 </div>
@@ -14589,10 +14563,13 @@ class list(object)
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
 <p>We have already seen that we can access specific items in a list by indexing:
-</div><div class="highlight"><pre><span></span><span class="n">second_item</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-<div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">   
-<p>We can also access a subset of a list with "slicing":
+<p>
+
+<code>second_item = my_list[1]
+</code>
+
+
+<p>We can also access a subset of a list with <b>slicing</b>:
 </div>
 </div>
 </div>
@@ -14685,9 +14662,9 @@ class list(object)
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
 <p><strong>Tuples</strong> are another type of object, very similar to a list.
 
-<p>A tuple is 1) *addressable*, 2) *ordered*, 3) *immutable*.
+<p>A tuple is 1) <b>addressable</b>, 2) <b>ordered</b>, 3) <b>immutable</b>.
 
-<p>The primary difference from a 'list' is that tuples are *immutable*.  They cannot be altered once created.  They are indicated by parentheses rather than brackets.
+<p>The primary difference from a 'list' is that tuples are <b>immutable</b>.  They cannot be altered once created.  They are indicated by parentheses rather than brackets.
 </div>
 </div>
 </div>
@@ -14875,7 +14852,7 @@ class list(object)
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
-<p>Lists and tuples have sum operations.  Note:  These operations create *new* objects.
+<p>Lists and tuples have sum operations.  Note:  These operations create <b>new</b> objects.
 </div>
 </div>
 </div>
@@ -14924,18 +14901,20 @@ class list(object)
 
 <p>We saw above that we can access items from lists and tuples by indexing with integers:
 
-    an_item = a_list[7]
+<code>an_item = a_list[7]</code>
 
 <p>This is a very useful structure if you already happen to know which index you are looking for. There are many scenarios, however, where this assumption is not true. For example, consider a phonebook (if you can remember what a phonebook looks like). We know the name of a person we want to call, and with that information we can retrieve their phone number. If the phone numbers were stored in a list, then we would need to know that "Michael" is the 7354th entry in the list in order to retrieve his phone number. Not so helpful.
 
-<p>What we would like is an object like a list that lets us retrieve its items by *name* rather than by *position*:
-</div><div class="highlight"><pre><span></span><span class="n">phone_number</span> <span class="o">=</span> <span class="n">phonebook</span><span class="p">[</span><span class="s1">&#39;Michael&#39;</span><span class="p">]</span>
-</pre></div>
-<div style="border-left: 3px solid #000; padding: 1px; padding-left: 10px; background: #F0FAFF; ">
+<p>What we would like is an object like a list that lets us retrieve its items by <b>name</b> rather than by <b>position</b>:
+
+
+
+<code>phone_number = phonebook['Michael']</code>
+
 <p>This turns out to be a very common problem in programming, and Python solves it by providing a built-in type called a <code>dict</code> (short for dictionary). Other languages call this a "mapping", "hash map", or sometimes just "object". 
 
 <p>A <code>dict</code> maps arbitrary (mostly) objects to elements.  A <code>dict</code> is a data structure that is
-1) *addressable*, 2) *unordered*, 3) *mutable*
+1) <b>addressable</b>, 2) <b>unordered</b>, 3) <b>mutable</b>
 </div>
 </div>
 </div>
